@@ -49,7 +49,7 @@ public class ParkingSpaceTest {
 		
 		// Attempt to park a large vehicle in a small space
 		ParkingSpace space = null; //TODO Init to a "compact" space
-		space.park(getFullSizeVehicleStub());
+		space.park(getVehicleStub(VehicleSize.Full));
 		
 	}
 
@@ -74,16 +74,12 @@ public class ParkingSpaceTest {
 	
 	// Stub Factory Methods
 	private Vehicle getVehicleStub() {
-		return getCompactSizeVehicleStub();
+		return getVehicleStub(VehicleSize.Compact);
 	}
 
-	private Vehicle getFullSizeVehicleStub() {
-		//TODO return "full size" Vehicle implementation
-		return null;
+	// Stub Factory Methods
+	private Vehicle getVehicleStub(VehicleSize size) {
+		return null;  //TODO return vehicle with given size;
 	}
 
-	private Vehicle getCompactSizeVehicleStub() {
-		// TODO return "compace size" vehicle impl
-		return null;
-	}
 }
