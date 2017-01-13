@@ -11,7 +11,9 @@ import org.junit.Test;
 
 public class ParkingSpaceTest {
 
-	ParkingSpace space;
+	private ParkingSpace space;
+	private long SPACE_ID = 10;
+	
 	
 	@Before
 	public void setup () {
@@ -30,7 +32,7 @@ public class ParkingSpaceTest {
 	@Test
 	public void testPark() {
 
-		assertTrue(space.park(getVehicleStub()) > 0);
+		assertEquals(SPACE_ID, space.park(getVehicleStub()));
 		
 	}
 

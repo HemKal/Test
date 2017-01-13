@@ -1,8 +1,6 @@
 package com.lca.phx.interview.garage;
 
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 public class GarageImpl implements Garage {
@@ -68,12 +66,12 @@ public class GarageImpl implements Garage {
 		// Validate Ticket
 		if (compactSpaces.containsKey(t.getSpaceId())) {
 			compactSpacesAvailable++;
-			return compactSpaces.get(t.getSpaceId()).unPark();
+			return compactSpaces.get(t.getSpaceId()).retrieveVehicle();
 		}
 		
 		if (fullSizeSpaces.containsKey(t.getSpaceId())) {
 			fullSizeSpacesAvailable++;
-			return fullSizeSpaces.get(t.getSpaceId()).unPark();
+			return fullSizeSpaces.get(t.getSpaceId()).retrieveVehicle();
 		}
 		
 		//callTheCopsCuzSombodiesCarHasBeenStolen();

@@ -27,7 +27,7 @@ public class ParkingSpaceImpl implements ParkingSpace {
 	}
 
 	@Override
-	public Vehicle unPark() {
+	public Vehicle retrieveVehicle() {
 		
 		Vehicle v = this.vehicle;
 		this.vehicle = null;
