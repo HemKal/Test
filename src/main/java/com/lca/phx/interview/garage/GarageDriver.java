@@ -5,14 +5,15 @@ public class GarageDriver {
 	
 	public static void main(String[] args) {
 		
-		
-		Garage garage = GarageImpl.init();
+		// Initialize Garage
+		Garage garage = null;
 		
 		System.out.println(garage);
 		
-		Vehicle v1 = new Vehicle(VehicleSize.Compact);
-		Vehicle v2 = new Vehicle(VehicleSize.Compact);
-		Vehicle v3 = new Vehicle(VehicleSize.Full);
+		// Init a few Vehicles of different sizes;
+		Vehicle v1 = null;
+		Vehicle v2 = null;
+		Vehicle v3 = null;
 		System.out.printf("Vehicles to park: v1: %s, v2: %s, V3: %s", v1, v2, v3);
 
 		Ticket t1 = garage.park(v1);

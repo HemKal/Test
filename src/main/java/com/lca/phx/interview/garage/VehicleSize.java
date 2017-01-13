@@ -2,6 +2,6 @@ package com.lca.phx.interview.garage;
 
 public enum VehicleSize {
 
-	Compact, Full
+	// add enum content here
 	
 }
