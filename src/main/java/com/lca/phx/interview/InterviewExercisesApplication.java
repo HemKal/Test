@@ -6,7 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class InterviewExercisesApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(InterviewExercisesApplication.class, args);
-	}
+	// Have to comment out due to failure packaging with multiple "mains" in the project
+//	public static void main(String[] args) {
+//		SpringApplication.run(InterviewExercisesApplication.class, args);
+//	}
 }
