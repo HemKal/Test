@@ -2,15 +2,23 @@ package com.lca.phx.interview.garage;
 
 public class GarageDriver {
 
-	
+	/**
+	 * Driver Program to exercise Garage Class
+	 * 
+	 * 1) Create Instance of Garage class and print out it's state
+	 * 2) Create a couple car instances of different sizes and park them
+	 * 3) Print out state of garage
+	 * 4) retrieve previously parked cars
+	 * 5) Print out state of garage
+	 */
 	public static void main(String[] args) {
 		
-		// Initialize Garage
+		//TODO Initialize Garage
 		Garage garage = null;
 		
 		System.out.println(garage);
 		
-		// Init a few Vehicles of different sizes;
+		//TODO Init a few Vehicles of different sizes;
 		Vehicle v1 = null;
 		Vehicle v2 = null;
 		Vehicle v3 = null;
