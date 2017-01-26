@@ -16,7 +16,7 @@ public class GarageDriver {
 		//TODO Initialize Garage
 		Garage garage = null;
 		
-		System.out.println(garage);
+		System.out.println(garage.getGarageState());
 		
 		//TODO Init a few Vehicles of different sizes;
 		Vehicle v1 = null;
@@ -29,14 +29,14 @@ public class GarageDriver {
 		Ticket t3 = garage.park(v3);
 		System.out.printf("\nTickets of parked vehicles: t1: %s, t2: %s, t3: %s", t1, t2, t3);
 		
-		System.out.println(garage);
+		System.out.println(garage.getGarageState());
 		
 		Vehicle vv1 = garage.retrieveVehicle(t1);
 		Vehicle vv2 = garage.retrieveVehicle(t2);
 		Vehicle vv3 = garage.retrieveVehicle(t3);
 		System.out.printf("\nRetrieved vehicles: v1: %s, v2: %s, v3: %s", vv1, vv2, vv3);
 		
-		System.out.println(garage);
+		System.out.println(garage.getGarageState());
 		
 	}
 }
