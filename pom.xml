@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>interview-exercises</name>
-	<description>Interview Exercises</description>
+	<description>Interview Exercise</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
