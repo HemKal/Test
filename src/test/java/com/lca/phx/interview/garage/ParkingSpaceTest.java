@@ -26,6 +26,8 @@ public class ParkingSpaceTest {
 		assertFalse(space.isOccupied());
 		space.park(getVehicleStub());
 		assertTrue(space.isOccupied());
+		space.retrieveVehicle();
+		assertFalse(space.isOccupied());
 		
 	}
 
