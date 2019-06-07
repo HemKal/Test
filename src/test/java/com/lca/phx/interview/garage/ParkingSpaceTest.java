@@ -32,9 +32,16 @@ public class ParkingSpaceTest {
 	}
 
 	@Test
-	public void testPark() {
+	public void testParkCompact() {
 
 		assertEquals(SPACE_ID, space.park(getVehicleStub()));
+		
+	}
+
+	@Test
+	public void testParkFullSize() {
+		
+		assertEquals(SPACE_ID, space.park(getVehicleStub(VehicleSize.Full)));
 		
 	}
 
