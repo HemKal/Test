@@ -24,7 +24,7 @@ public class ParkingSpaceTest {
 	public void testIsOccupied() {
 		
 		assertFalse(space.isOccupied());
-		space.park(getVehicleStub());
+		space.park(VehicleStubFactory.buildCompactVehicle());
 		assertTrue(space.isOccupied());
 		space.retrieveVehicle();
 		assertFalse(space.isOccupied());
@@ -34,22 +34,25 @@ public class ParkingSpaceTest {
 	@Test
 	public void testParkCompact() {
 
-		assertEquals(SPACE_ID, space.park(getVehicleStub()));
+		assertEquals(SPACE_ID, space.park(VehicleStubFactory.buildCompactVehicle()));
 		
 	}
 
 	@Test
 	public void testParkFullSize() {
 		
-		assertEquals(SPACE_ID, space.park(getVehicleStub(VehicleSize.Full)));
+		assertEquals(SPACE_ID, space.park(VehicleStubFactory.buildFullSizeVehicle()));
 		
 	}
 
 	@Test(expected=IllegalArgumentException.class)
 	public void testParkForSpaceAlreadyOccupied() {
 		
-		space.park(getVehicleStub());
-		space.park(getVehicleStub());
+		Vehicle v1 = VehicleStubFactory.buildCompactVehicle();
+		space.park(v1);
+		
+		Vehicle v2 = VehicleStubFactory.buildCompactVehicle();
+		space.park(v2);
 		
 	}
 
@@ -58,7 +61,7 @@ public class ParkingSpaceTest {
 		
 		// Attempt to park a large vehicle in a small space
 		ParkingSpace space = null; //TODO Init to a "compact" space
-		space.park(getVehicleStub(VehicleSize.Full));
+		space.park(VehicleStubFactory.buildFullSizeVehicle());
 		
 	}
 
@@ -66,7 +69,7 @@ public class ParkingSpaceTest {
 	@Test
 	public void testRetrieveVehicle() {
 		
-		Vehicle v = getVehicleStub();
+		Vehicle v = VehicleStubFactory.buildCompactVehicle();
 		space.park(v);
 		Vehicle retrievedVehicle = space.retrieveVehicle();
 		assertNotNull(retrievedVehicle);
@@ -78,17 +81,6 @@ public class ParkingSpaceTest {
 		
 		assertNull(space.retrieveVehicle());
 
-	}
-	
-	
-	// Stub Factory Methods
-	private Vehicle getVehicleStub() {
-		return getVehicleStub(VehicleSize.Compact);
-	}
-
-	// Stub Factory Methods
-	private Vehicle getVehicleStub(VehicleSize size) {
-		return null;  //TODO return vehicle with given size;
 	}
 
 }
