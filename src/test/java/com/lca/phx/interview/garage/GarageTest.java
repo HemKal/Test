@@ -1,9 +1,13 @@
 package com.lca.phx.interview.garage;
 
-import static org.junit.Assert.*;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class GarageTest {
 
@@ -13,7 +17,7 @@ public class GarageTest {
 	private static final int INIT_FULLSIZE_SPACES = 3;
 	private static final int INIT_TOTAL_SPACES = INIT_COMPACT_SPACES + INIT_FULLSIZE_SPACES;
 	
-	@Before
+	@BeforeEach
 	public void setup() {
 		//TODO - Initialize a tiny garage using the INIT_ sizes above
 		this.garage = null;
@@ -59,19 +63,22 @@ public class GarageTest {
 		
 	}
 
-	@Test(expected=IllegalStateException.class)
+	@Test()
 	public void testParkForFullSizeOverflow() {
 		
 		// "Fill up" all compact spaces
 		for (int i = 0; i < INIT_FULLSIZE_SPACES; i++) {
 			garage.park(VehicleStubFactory.buildFullSizeVehicle());
 		}
+
 		// This *should* fail because the only spaces left are compact and we're trying to park a full size vehicle
-		garage.park(VehicleStubFactory.buildFullSizeVehicle());
+		assertThatExceptionOfType(IllegalStateException.class)
+			.isThrownBy(()->{garage.park(VehicleStubFactory.buildFullSizeVehicle());});
+		
 		
 	}
 
-	@Test(expected=IllegalStateException.class)
+	@Test()
 	public void testParkForGarageFull() {
 		
 		// "Fill up" all compact spaces
@@ -85,7 +92,9 @@ public class GarageTest {
 		}
 		
 		// This should fail because there's no spaces left
-		garage.park(VehicleStubFactory.buildFullSizeVehicle());
+		assertThatExceptionOfType(IllegalStateException.class)
+			.isThrownBy(()->{garage.park(VehicleStubFactory.buildFullSizeVehicle());});
+		
 		
 	}
 
